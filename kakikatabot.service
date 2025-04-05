@@ -1,0 +1,16 @@
+[Unit]
+Description=KakikataShogun.Bot
+After=network.target
+
+[Service]
+WorkingDirectory=/var/kakikatabot
+ExecStart=/var/kakikatabot/KakikataShogun.Bot
+Restart=always
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=kakikatabot
+User=www-data
+Environment=ASPNETCORE_ENVIRONMENT=Production
+
+[Install]
+WantedBy=multi-user.target
